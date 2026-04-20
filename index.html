@@ -472,7 +472,22 @@
       content: '';
       position: absolute;
       top: 26px; left: calc(12.5% + 27px); right: calc(12.5% + 27px);
-      height: 1px; background: var(--border);
+      height: 2px;
+      background: linear-gradient(90deg, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
+      background-size: 200% 100%;
+      animation: rgbFlow 3s linear infinite;
+    }
+    @keyframes rgbFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .rgb-text {
+      background: linear-gradient(90deg, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: rgbFlow 3s linear infinite;
     }
     .step { padding: 0 16px; text-align: center; }
     .step-num {
@@ -800,15 +815,15 @@
         <a href="#what" class="btn-secondary">See What We Build</a>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num" style="color:#00e676">7–14 Days</div>
+          <div class="stat-num rgb-text">7–14 Days</div>
           <div class="stat-label">Delivery</div>
         </div>
         <div class="stat">
-          <div class="stat-num" style="color:#4f7af8">24/7</div>
+          <div class="stat-num rgb-text">24/7</div>
           <div class="stat-label">Support Available</div>
         </div>
         <div class="stat">
-          <div class="stat-num" style="color:#e040fb">100%</div>
+          <div class="stat-num rgb-text">100%</div>
           <div class="stat-label">Custom Built</div>
         </div>
       </div>
