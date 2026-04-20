@@ -15,10 +15,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @keyframes rgbFlow {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
+    @keyframes rgbSpin { to { transform: rotate(360deg); } }
 
     :root {
       --bg:       #0a0a0a;
@@ -686,20 +683,30 @@
     .mobile-nav a:hover { color: var(--navy); }
 
     /* ── RGB SPINNING BORDERS ───────────────────── */
-    .what-card, .pricing-card, .faq-item, .hero-badge {
+    .what-card, .pricing-card, .faq-item {
       position: relative;
       border: none;
       z-index: 0;
+      overflow: hidden;
     }
+    .what-card::before, .pricing-card::before, .faq-item::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: calc(var(--radius-lg) - 2px);
+      background: var(--card);
+      z-index: -1;
+    }
+    .pricing-card.featured::before { background: var(--navy); }
     .what-card::after, .pricing-card::after, .faq-item::after, .hero-badge::after {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
-      background-size: 200% 100%;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(#ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
       z-index: -1;
-      animation: rgbFlow 3s linear infinite;
+      animation: rgbSpin 3s linear infinite;
     }
 
     /* ── MOBILE ─────────────────────────────────── */
