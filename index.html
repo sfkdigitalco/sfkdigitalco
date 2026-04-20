@@ -256,7 +256,7 @@
     }
     .scroll-shaft {
       width: 1px; height: 44px;
-      background: linear-gradient(to bottom, transparent, var(--navy) 35%, var(--navy));
+      background: linear-gradient(to bottom, transparent, #00e676 35%, #00b0ff);
       animation: shaftFall 1.8s ease-in-out infinite;
     }
     @keyframes shaftFall {
@@ -266,8 +266,8 @@
     }
     .scroll-tip {
       width: 8px; height: 8px;
-      border-right: 1.5px solid var(--navy);
-      border-bottom: 1.5px solid var(--navy);
+      border-right: 1.5px solid #00b0ff;
+      border-bottom: 1.5px solid #00b0ff;
       transform: rotate(45deg);
       margin-top: -3px;
       animation: tipFall 1.8s ease-in-out infinite;
@@ -684,12 +684,17 @@
     .mobile-nav a:hover { color: var(--navy); }
 
     /* ── RGB BORDER LINE ───────────────────────── */
-    .what-card, .pricing-card, .faq-item, .hero-badge {
+    .what-card, .pricing-card, .faq-item, .hero-badge, .why-item, .hero-stats {
       border: 2px solid transparent !important;
       background:
         linear-gradient(var(--card), var(--card)) padding-box,
         conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
       animation: rgbRotate 3s linear infinite;
+    }
+    .hero-stats {
+      background:
+        linear-gradient(var(--bg-alt), var(--bg-alt)) padding-box,
+        conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
     }
     .pricing-card.featured {
       background:
@@ -700,6 +705,13 @@
       background:
         linear-gradient(var(--bg-alt), var(--bg-alt)) padding-box,
         conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
+    }
+    .step-num {
+      border: 2px solid transparent !important;
+      background:
+        linear-gradient(var(--bg), var(--bg)) padding-box,
+        conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
+      animation: rgbRotate 3s linear infinite;
     }
 
     /* ── MOBILE ─────────────────────────────────── */
@@ -788,15 +800,15 @@
         <a href="#what" class="btn-secondary">See What We Build</a>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">7–14 Days</div>
+          <div class="stat-num" style="color:#00e676">7–14 Days</div>
           <div class="stat-label">Delivery</div>
         </div>
         <div class="stat">
-          <div class="stat-num">24/7</div>
+          <div class="stat-num" style="color:#4f7af8">24/7</div>
           <div class="stat-label">Support Available</div>
         </div>
         <div class="stat">
-          <div class="stat-num">100%</div>
+          <div class="stat-num" style="color:#e040fb">100%</div>
           <div class="stat-label">Custom Built</div>
         </div>
       </div>
