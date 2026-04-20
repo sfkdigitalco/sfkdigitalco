@@ -15,6 +15,19 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    @keyframes rgbBorder {
+      0%   { border-color: #ff003c; }
+      16%  { border-color: #ff6600; }
+      33%  { border-color: #00e676; }
+      50%  { border-color: #00b0ff; }
+      66%  { border-color: #7c4dff; }
+      83%  { border-color: #e040fb; }
+      100% { border-color: #ff003c; }
+    }
+    .hero-badge, .what-card, .pricing-card, .faq-item, nav {
+      animation: rgbBorder 4s linear infinite;
+    }
+
     :root {
       --bg:       #0a0a0a;
       --bg-alt:   #111111;
