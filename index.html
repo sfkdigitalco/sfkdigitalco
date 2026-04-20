@@ -15,7 +15,10 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @keyframes spinBorder { to { transform: rotate(360deg); } }
+    @keyframes rgbFlow {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
 
     :root {
       --bg:       #0a0a0a;
@@ -693,9 +696,10 @@
       position: absolute;
       inset: -2px;
       border-radius: inherit;
-      background: conic-gradient(#ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
+      background: linear-gradient(90deg, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
+      background-size: 200% 100%;
       z-index: -1;
-      animation: spinBorder 3s linear infinite;
+      animation: rgbFlow 3s linear infinite;
     }
 
     /* ── MOBILE ─────────────────────────────────── */
