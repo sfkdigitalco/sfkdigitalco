@@ -1080,6 +1080,9 @@
       document.querySelector('.nav-cta').style.display = 'none';
       document.getElementById('hero').style.minHeight = '50vh';
       document.getElementById('hero').style.padding = '80px 24px 30px';
+      document.querySelectorAll('.section-title, .section-label, .section-sub').forEach(el => {
+        el.style.textAlign = 'center';
+      });
     }
 
     const obs = new IntersectionObserver(entries => {
