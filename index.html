@@ -1075,7 +1075,7 @@
       setTimeout(() => document.getElementById('loader').classList.add('gone'), 1400);
     });
 
-    if (window.screen.width < 768) {
+    if (window.matchMedia('(max-device-width: 900px)').matches) {
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       document.getElementById('hamburger').style.display = 'flex';
