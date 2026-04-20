@@ -687,11 +687,17 @@
       .process-steps::before { display: none; }
     }
     @media (max-width: 600px) {
-      .hero-stats { flex-direction: column; }
-      .stat { border-right: none; border-bottom: 1px solid var(--border); }
-      .stat:last-child { border-bottom: none; }
+      .hero-h1 { font-size: clamp(2.8rem, 14vw, 4rem); letter-spacing: .08em; }
+      .hero-h1 .h1-dc { font-size: .55em; letter-spacing: .16em; }
+      .hero-sub { font-size: .95rem; }
+      .hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 20px; width: 50%; }
+      .stat:last-child { width: 100%; border-bottom: none; }
+      .what-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .what-card { padding: 20px 16px; }
       .pricing-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; }
+      section { padding: 64px 18px; }
     }
   </style>
 </head>
