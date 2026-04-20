@@ -552,7 +552,7 @@
 
     /* ── FAQ ────────────────────────────────────── */
     #faq { padding: 120px 0; background: var(--bg-alt); }
-    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 8px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 8px; }
     .faq-item {
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -1078,8 +1078,7 @@
     if (window.screen.width < 768) {
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
-      document.getElementById('mobileNav').style.display = 'none';
-      document.getElementById('hamburger').style.display = 'none';
+      document.getElementById('hamburger').style.display = 'flex';
       document.getElementById('hero').style.minHeight = '50vh';
       document.getElementById('hero').style.padding = '80px 24px 30px';
       document.querySelectorAll('.section-title, .section-label, .section-sub, .what-card h3, .what-card p, .card-num, .why-item h3, .why-item p, .process-step h3, .process-step p').forEach(el => {
