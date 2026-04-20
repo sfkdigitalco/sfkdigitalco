@@ -15,7 +15,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @keyframes rgbSpin { to { transform: rotate(360deg); } }
+    @property --rgb-a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+    @keyframes rgbRotate { to { --rgb-a: 360deg; } }
 
     :root {
       --bg:       #0a0a0a;
@@ -682,31 +683,23 @@
     }
     .mobile-nav a:hover { color: var(--navy); }
 
-    /* ── RGB SPINNING BORDERS ───────────────────── */
-    .what-card, .pricing-card, .faq-item {
-      position: relative;
-      border: none;
-      z-index: 0;
-      overflow: hidden;
+    /* ── RGB BORDER LINE ───────────────────────── */
+    .what-card, .pricing-card, .faq-item, .hero-badge {
+      border: 2px solid transparent !important;
+      background:
+        linear-gradient(var(--card), var(--card)) padding-box,
+        conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
+      animation: rgbRotate 3s linear infinite;
     }
-    .what-card::before, .pricing-card::before, .faq-item::before {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: calc(var(--radius-lg) - 2px);
-      background: var(--card);
-      z-index: -1;
+    .pricing-card.featured {
+      background:
+        linear-gradient(var(--navy), var(--navy)) padding-box,
+        conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
     }
-    .pricing-card.featured::before { background: var(--navy); }
-    .what-card::after, .pricing-card::after, .faq-item::after, .hero-badge::after {
-      content: '';
-      position: absolute;
-      inset: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(#ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c);
-      z-index: -1;
-      animation: rgbSpin 3s linear infinite;
+    .hero-badge {
+      background:
+        linear-gradient(var(--bg-alt), var(--bg-alt)) padding-box,
+        conic-gradient(from var(--rgb-a), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box !important;
     }
 
     /* ── MOBILE ─────────────────────────────────── */
