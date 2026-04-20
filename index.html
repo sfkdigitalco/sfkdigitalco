@@ -1078,6 +1078,8 @@
     if (window.screen.width < 768) {
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
+      document.getElementById('mobileNav').style.display = 'none';
+      document.getElementById('hamburger').style.display = 'none';
       document.getElementById('hero').style.minHeight = '50vh';
       document.getElementById('hero').style.padding = '80px 24px 30px';
       document.querySelectorAll('.section-title, .section-label, .section-sub').forEach(el => {
