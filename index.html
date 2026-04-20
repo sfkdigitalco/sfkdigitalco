@@ -7,7 +7,7 @@
   <meta property="og:title" content="SFK Digital Co - Web Design" />
   <meta property="og:description" content="We build high-converting websites for businesses. Starting at $749.99." />
   <meta property="og:type" content="website" />
-  <title>SFK Digital Co — Websites Built to Perform</title>
+  <title>SFK Digital Co - Web Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Hubot+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -1102,6 +1102,8 @@
     });
 
     if (window.matchMedia('(max-device-width: 900px)').matches) {
+      document.querySelector('.loader-wordmark').style.fontSize = '3.5rem';
+      document.querySelector('.loader-bar').style.width = '260px';
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       document.getElementById('hamburger').style.display = 'flex';
