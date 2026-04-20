@@ -552,7 +552,7 @@
 
     /* ── FAQ ────────────────────────────────────── */
     #faq { padding: 120px 0; background: var(--bg-alt); }
-    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 8px; max-width: 720px; }
+    .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 8px; max-width: 720px; margin-left: auto; margin-right: auto; }
     .faq-item {
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -1074,6 +1074,13 @@
     window.addEventListener('load', () => {
       setTimeout(() => document.getElementById('loader').classList.add('gone'), 1400);
     });
+
+    if (window.screen.width < 768) {
+      document.querySelector('.nav-links').style.display = 'none';
+      document.querySelector('.nav-cta').style.display = 'none';
+      document.getElementById('hero').style.minHeight = '50vh';
+      document.getElementById('hero').style.padding = '80px 24px 30px';
+    }
 
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
