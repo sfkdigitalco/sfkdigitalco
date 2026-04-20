@@ -661,28 +661,30 @@
     .footer-copy { color: #4a5568; font-size: .78rem; }
     .footer-mono { font-family: 'JetBrains Mono', monospace; font-size: .66rem; color: #2a3245; letter-spacing: .08em; }
 
+    /* ── MOBILE NAV (always hidden by default, JS shows hamburger on phones) ── */
+    .mobile-nav {
+      display: none;
+      position: fixed; inset: 0; top: 68px;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 28px; z-index: 499;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: var(--text);
+      font-family: 'Hubot Sans', sans-serif;
+      font-size: 1.5rem; font-weight: 600;
+      text-decoration: none; transition: color .2s;
+    }
+    .mobile-nav a:hover { color: var(--navy); }
+
     /* ── MOBILE ─────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
-      .mobile-nav {
-        display: none;
-        position: fixed; inset: 0; top: 68px;
-        background: rgba(255,255,255,.97);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        align-items: center; justify-content: center;
-        gap: 28px; z-index: 499;
-      }
-      .mobile-nav.open { display: flex; }
-      .mobile-nav a {
-        color: var(--text);
-        font-family: 'Hubot Sans', sans-serif;
-        font-size: 1.5rem; font-weight: 600;
-        text-decoration: none; transition: color .2s;
-      }
-      .mobile-nav a:hover { color: var(--navy); }
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .process-steps::before { display: none; }
     }
