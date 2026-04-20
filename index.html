@@ -15,17 +15,28 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    @keyframes rgbBorder {
-      0%   { border-color: #ff003c; }
-      16%  { border-color: #ff6600; }
-      33%  { border-color: #00e676; }
-      50%  { border-color: #00b0ff; }
-      66%  { border-color: #7c4dff; }
-      83%  { border-color: #e040fb; }
-      100% { border-color: #ff003c; }
+    @property --ba {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
     }
-    .hero-badge, .what-card, .pricing-card, .faq-item, nav {
-      animation: rgbBorder 4s linear infinite;
+    @keyframes spinBorder { to { --ba: 360deg; } }
+    .hero-badge, .what-card, .pricing-card, .faq-item {
+      border: 2px solid transparent;
+      background:
+        linear-gradient(var(--card), var(--card)) padding-box,
+        conic-gradient(from var(--ba), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box;
+      animation: spinBorder 3s linear infinite;
+    }
+    .hero-badge {
+      background:
+        linear-gradient(var(--bg-alt), var(--bg-alt)) padding-box,
+        conic-gradient(from var(--ba), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box;
+    }
+    .pricing-card.featured {
+      background:
+        linear-gradient(var(--navy), var(--navy)) padding-box,
+        conic-gradient(from var(--ba), #ff003c, #ff6600, #ffee00, #00e676, #00b0ff, #7c4dff, #e040fb, #ff003c) border-box;
     }
 
     :root {
