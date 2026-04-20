@@ -695,7 +695,20 @@
       .stat:last-child { width: 100%; border-bottom: none; }
       .what-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
       .what-card { padding: 20px 16px; }
-      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+      .pricing-card { padding: 14px 8px; border-radius: 10px; }
+      .plan-badge { font-size: .5rem; padding: 2px 6px; }
+      .plan-name { font-size: .72rem; margin: 6px 0 4px; }
+      .plan-desc { display: none; }
+      .price-amount { font-size: 1.6rem; }
+      .price-currency { font-size: .75rem; }
+      .price-cents { font-size: .75rem; }
+      .price-period { font-size: .5rem; letter-spacing: 0; }
+      .plan-divider { margin: 10px 0; }
+      .plan-features { gap: 6px; }
+      .plan-features li { font-size: .58rem; gap: 5px; }
+      .feat-check { width: 14px; height: 14px; min-width: 14px; }
+      .btn-plan { font-size: .58rem; padding: 8px 4px; border-radius: 6px; }
       .footer-inner { flex-direction: column; }
       section { padding: 64px 18px; }
     }
