@@ -1154,6 +1154,15 @@
       document.querySelectorAll('section').forEach(s => {
         s.style.padding = '100px 60px';
       });
+      // Pages 3–7: extra zoom (more padding + bigger text)
+      ['pricing','process','why','faq'].forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) {
+          sec.style.padding = '140px 50px';
+          sec.querySelectorAll('p, li').forEach(el => el.style.fontSize = '1.05rem');
+          sec.querySelectorAll('h3, h4').forEach(el => el.style.fontSize = '1.3rem');
+        }
+      });
 
       // ── ALL SECTION TITLES: +20% ──
       document.querySelectorAll('.section-title').forEach(el => {
