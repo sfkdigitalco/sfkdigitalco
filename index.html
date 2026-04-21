@@ -1166,11 +1166,21 @@
           sec.querySelectorAll('h3, h4').forEach(el => el.style.fontSize = '1.3rem');
         }
       });
-      // Pages 6 & 7: more zoom
-      ['faq','cta'].forEach(id => {
-        const sec = document.getElementById(id);
-        if (sec) sec.style.padding = '160px 50px';
-      });
+      // Page 6: more zoom
+      const faqSec = document.getElementById('faq');
+      if (faqSec) faqSec.style.padding = '160px 50px';
+
+      // Page 7 CTA: tight padding, fix title layout
+      const ctaSec = document.getElementById('cta');
+      if (ctaSec) {
+        ctaSec.style.padding = '40px 50px';
+        const ctaTitle = ctaSec.querySelector('.section-title');
+        if (ctaTitle) {
+          ctaTitle.style.fontSize = '2.4rem';
+          ctaTitle.style.whiteSpace = 'normal';
+          ctaTitle.style.wordBreak = 'keep-all';
+        }
+      }
 
       // ── ALL SECTION TITLES (pages 2–7): match page 5 size ──
       document.querySelectorAll('#what .section-title, #pricing .section-title, #process .section-title, #why .section-title, #faq .section-title, #cta .section-title').forEach(el => {
@@ -1262,12 +1272,11 @@
         faqList.style.margin = '52px auto 0';
       }
 
-      // ── CTA: zoom in more ──
+      // ── CTA: clean layout ──
       const cta = document.getElementById('cta');
       if (cta) {
-        cta.style.fontSize = '1.2rem';
         const ctaBox = cta.querySelector('.cta-box');
-        if (ctaBox) { ctaBox.style.padding = '100px 70px'; ctaBox.style.borderRadius = '28px'; }
+        if (ctaBox) { ctaBox.style.padding = '60px 50px'; ctaBox.style.borderRadius = '24px'; }
         const ctaP = cta.querySelector('p');
         if (ctaP) { ctaP.style.fontSize = '1.1rem'; ctaP.style.lineHeight = '1.9'; }
         const ctaBtns = cta.querySelector('.cta-buttons');
