@@ -1160,8 +1160,8 @@
         el.style.fontSize = '2.2rem';
       });
 
-      // ── PAGE 1 HERO: bigger content ──
-      document.getElementById('hero').style.padding = '100px 80px 60px';
+      // ── PAGE 1 HERO: trim top/bottom blank space ──
+      document.getElementById('hero').style.padding = '40px 80px 30px';
       document.querySelector('.hero-h1').style.fontSize = '5rem';
       document.querySelector('.hero-sub').style.fontSize = '1.1rem';
 
@@ -1187,15 +1187,20 @@
         }
       }
 
-      // ── PAGE 4 PROCESS: vertical stack ──
+      // ── PAGE 4 PROCESS: vertical stack, bigger steps, more gap ──
       const processSteps = document.querySelector('.process-steps');
       if (processSteps) {
         processSteps.style.gridTemplateColumns = '1fr';
         processSteps.style.maxWidth = '600px';
         processSteps.style.margin = '56px auto 0';
+        processSteps.style.gap = '60px';
+        processSteps.classList.add('no-line');
       }
-      const processBefore = document.querySelector('.process-steps');
-      if (processBefore) processBefore.classList.add('no-line');
+      document.querySelectorAll('.step-num').forEach(n => {
+        n.style.width = '72px'; n.style.height = '72px'; n.style.fontSize = '1.1rem';
+      });
+      document.querySelectorAll('.step h4').forEach(h => { h.style.fontSize = '1.3rem'; });
+      document.querySelectorAll('.step p').forEach(p => { p.style.fontSize = '1rem'; });
 
       // ── PAGE 5 WHY US: vertical stack ──
       const whyGrid = document.querySelector('.why-grid');
@@ -1212,12 +1217,12 @@
         faqList.style.margin = '52px auto 0';
       }
 
-      // ── CTA: zoom in ──
+      // ── CTA: zoom in more ──
       const cta = document.getElementById('cta');
       if (cta) {
-        cta.style.padding = '140px 80px';
+        cta.style.padding = '160px 60px';
         const ctaBox = cta.querySelector('.cta-box');
-        if (ctaBox) { ctaBox.style.padding = '80px 60px'; ctaBox.style.borderRadius = '24px'; }
+        if (ctaBox) { ctaBox.style.padding = '100px 70px'; ctaBox.style.borderRadius = '28px'; }
         const ctaP = cta.querySelector('p');
         if (ctaP) { ctaP.style.fontSize = '1.1rem'; ctaP.style.lineHeight = '1.9'; }
         const ctaBtns = cta.querySelector('.cta-buttons');
