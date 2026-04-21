@@ -885,7 +885,7 @@
     <div class="container">
       <div class="reveal" style="text-align:center">
         <div class="section-label">// Pricing</div>
-        <h2 class="section-title" id="pricing-title">Simple, Transparent Pricing</h2>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
         <p class="section-sub" style="margin:0 auto">No hidden fees. No hourly billing. No surprises. Pick what your business needs.</p>
       </div>
       <div class="pricing-grid">
@@ -1155,9 +1155,10 @@
         s.style.padding = '100px 60px';
       });
 
-      // ── PRICING TITLE ──
-      const pt = document.getElementById('pricing-title');
-      if (pt) pt.style.fontSize = '3.2rem';
+      // ── ALL SECTION TITLES: +20% ──
+      document.querySelectorAll('.section-title').forEach(el => {
+        el.style.fontSize = '2.2rem';
+      });
 
       // ── PAGE 1 HERO: bigger content ──
       document.getElementById('hero').style.padding = '100px 80px 60px';
@@ -1209,6 +1210,44 @@
       if (faqList) {
         faqList.style.maxWidth = '800px';
         faqList.style.margin = '52px auto 0';
+      }
+
+      // ── CTA: zoom in ──
+      const cta = document.getElementById('cta');
+      if (cta) {
+        cta.style.padding = '140px 80px';
+        const ctaBox = cta.querySelector('.cta-box');
+        if (ctaBox) { ctaBox.style.padding = '80px 60px'; ctaBox.style.borderRadius = '24px'; }
+        const ctaP = cta.querySelector('p');
+        if (ctaP) { ctaP.style.fontSize = '1.1rem'; ctaP.style.lineHeight = '1.9'; }
+        const ctaBtns = cta.querySelector('.cta-buttons');
+        if (ctaBtns) { ctaBtns.style.flexDirection = 'column'; ctaBtns.style.alignItems = 'center'; ctaBtns.style.gap = '16px'; }
+        cta.querySelectorAll('.btn-cta-white, .btn-cta-outline').forEach(b => {
+          b.style.width = '100%'; b.style.textAlign = 'center'; b.style.fontSize = '1.1rem'; b.style.padding = '18px 32px';
+        });
+      }
+
+      // ── FOOTER: clean and organized ──
+      const footer = document.querySelector('footer');
+      if (footer) {
+        footer.style.padding = '80px 60px 40px';
+        const inner = footer.querySelector('.footer-inner');
+        if (inner) {
+          inner.style.flexDirection = 'column';
+          inner.style.alignItems = 'center';
+          inner.style.textAlign = 'center';
+          inner.style.gap = '50px';
+        }
+        footer.querySelectorAll('.footer-links').forEach(fl => { fl.style.textAlign = 'center'; });
+        footer.querySelectorAll('.footer-links ul').forEach(ul => { ul.style.alignItems = 'center'; });
+        const brand = footer.querySelector('.footer-brand p');
+        if (brand) { brand.style.maxWidth = '500px'; brand.style.margin = '0 auto'; brand.style.fontSize = '1rem'; }
+        const logo = footer.querySelector('.footer-logo');
+        if (logo) { logo.style.fontSize = '1.6rem'; logo.style.marginBottom = '16px'; }
+        footer.querySelectorAll('.footer-links a').forEach(a => { a.style.fontSize = '1rem'; });
+        footer.querySelectorAll('.footer-links h5').forEach(h => { h.style.fontSize = '.8rem'; });
+        const bottom = footer.querySelector('.footer-bottom');
+        if (bottom) { bottom.style.flexDirection = 'column'; bottom.style.textAlign = 'center'; bottom.style.gap = '12px'; bottom.style.paddingTop = '32px'; }
       }
 
       // ── CENTER ALL TITLES ──
