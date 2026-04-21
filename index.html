@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1200" />
+  <script>if(screen.width<=900){document.querySelector('meta[name=viewport]').content='width=700';}</script>
   <meta name="description" content="SFK Digital Co — Professional websites built for businesses. One-time $749.99 build + optional $97.99/mo management." />
   <meta property="og:title" content="SFK Digital Co - Premium Web Design" />
   <meta property="og:description" content="We build high-converting websites for businesses. Starting at $749.99." />
@@ -884,7 +885,7 @@
     <div class="container">
       <div class="reveal" style="text-align:center">
         <div class="section-label">// Pricing</div>
-        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <h2 class="section-title" id="pricing-title">Simple, Transparent Pricing</h2>
         <p class="section-sub" style="margin:0 auto">No hidden fees. No hourly billing. No surprises. Pick what your business needs.</p>
       </div>
       <div class="pricing-grid">
@@ -1135,22 +1136,28 @@
       document.querySelector('.loader-bar').style.width = '500px';
       document.querySelector('.loader-bar').style.height = '2px';
 
-      // ── NAV: taller, bigger ──
+      // ── NAV: much bigger ──
       const nav = document.querySelector('nav');
-      nav.style.height = '90px';
-      nav.style.padding = '0 40px';
-      document.querySelector('.logo-sfk').style.fontSize = '1.8rem';
-      document.querySelector('.logo-dc').style.fontSize = '1rem';
+      nav.style.height = '130px';
+      nav.style.padding = '0 50px';
+      document.querySelector('.nav-logo').style.fontSize = '2.6rem';
+      document.querySelector('.logo-sfk').style.fontSize = '2.6rem';
+      document.querySelector('.logo-dc').style.fontSize = '1.4rem';
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       const hbg = document.getElementById('hamburger');
       hbg.style.display = 'flex';
-      hbg.querySelectorAll('span').forEach(s => { s.style.width = '28px'; s.style.height = '2px'; });
+      hbg.style.gap = '8px';
+      hbg.querySelectorAll('span').forEach(s => { s.style.width = '36px'; s.style.height = '2.5px'; });
 
       // ── SECTIONS: natural padding, centered content ──
       document.querySelectorAll('section').forEach(s => {
         s.style.padding = '100px 60px';
       });
+
+      // ── PRICING TITLE ──
+      const pt = document.getElementById('pricing-title');
+      if (pt) pt.style.fontSize = '3.2rem';
 
       // ── PAGE 1 HERO: bigger content ──
       document.getElementById('hero').style.padding = '100px 80px 60px';
