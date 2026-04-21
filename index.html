@@ -1130,8 +1130,10 @@
     if (window.matchMedia('(max-device-width: 900px)').matches) {
 
       // ── LOADER ──
-      document.querySelector('.loader-wordmark').style.fontSize = '3.5rem';
-      document.querySelector('.loader-bar').style.width = '260px';
+      document.querySelector('.loader-wordmark').style.fontSize = '7rem';
+      document.querySelector('.loader-wordmark').style.gap = '18px';
+      document.querySelector('.loader-bar').style.width = '500px';
+      document.querySelector('.loader-bar').style.height = '2px';
 
       // ── NAV: taller, bigger ──
       const nav = document.querySelector('nav');
