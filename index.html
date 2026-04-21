@@ -1157,8 +1157,8 @@
       document.querySelectorAll('section').forEach(s => {
         s.style.padding = '100px 60px';
       });
-      // Pages 3–7: extra zoom (more padding + bigger text)
-      ['pricing','process','why','faq'].forEach(id => {
+      // Pages 3–5: zoom
+      ['pricing','process','why'].forEach(id => {
         const sec = document.getElementById(id);
         if (sec) {
           sec.style.padding = '140px 50px';
@@ -1166,10 +1166,31 @@
           sec.querySelectorAll('h3, h4').forEach(el => el.style.fontSize = '1.3rem');
         }
       });
+      // Pages 6 & 7: more zoom
+      ['faq','cta'].forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.style.padding = '160px 50px';
+      });
 
-      // ── ALL SECTION TITLES: +20% ──
-      document.querySelectorAll('.section-title').forEach(el => {
-        el.style.fontSize = '2.2rem';
+      // ── ALL SECTION TITLES (pages 2–7): match page 5 size ──
+      document.querySelectorAll('#what .section-title, #pricing .section-title, #process .section-title, #why .section-title, #faq .section-title, #cta .section-title').forEach(el => {
+        el.style.fontSize = '2.8rem';
+        el.style.lineHeight = '1.15';
+      });
+
+      // ── PRICING CARDS: shorter, equal dimensions ──
+      document.querySelectorAll('.pricing-card').forEach(card => {
+        card.style.padding = '20px 16px';
+        card.querySelectorAll('.plan-features li').forEach((li, i) => {
+          if (i >= 4) li.style.display = 'none';
+        });
+        card.querySelectorAll('.plan-name').forEach(el => el.style.fontSize = '1rem');
+        card.querySelectorAll('.price-amount').forEach(el => el.style.fontSize = '2rem');
+        card.querySelectorAll('.plan-desc').forEach(el => el.style.fontSize = '.85rem');
+        card.querySelectorAll('.plan-features li').forEach(el => el.style.fontSize = '.82rem');
+        card.querySelectorAll('.price-period').forEach(el => el.style.fontSize = '.7rem');
+        card.querySelectorAll('.plan-divider').forEach(el => el.style.margin = '10px 0');
+        card.querySelectorAll('.btn-plan').forEach(el => { el.style.padding = '10px 8px'; el.style.fontSize = '.8rem'; });
       });
 
       // ── PAGE 1 HERO: trim top/bottom blank space ──
@@ -1244,7 +1265,6 @@
       // ── CTA: zoom in more ──
       const cta = document.getElementById('cta');
       if (cta) {
-        cta.style.padding = '10px 40px';
         cta.style.fontSize = '1.2rem';
         const ctaBox = cta.querySelector('.cta-box');
         if (ctaBox) { ctaBox.style.padding = '100px 70px'; ctaBox.style.borderRadius = '28px'; }
