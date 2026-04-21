@@ -1131,11 +1131,8 @@
     if (window.matchMedia('(max-device-width: 900px)').matches) {
 
       // ── LOADER ──
-      const lw = document.querySelector('.loader-wordmark');
-      lw.style.fontSize = '7rem';
-      lw.style.gap = '28px';
-      lw.style.alignItems = 'baseline';
-      lw.querySelector('.logo-dc').style.fontSize = '1em';
+      document.querySelector('.loader-wordmark').style.fontSize = '7rem';
+      document.querySelector('.loader-wordmark').style.gap = '18px';
       document.querySelector('.loader-bar').style.width = '500px';
       document.querySelector('.loader-bar').style.height = '2px';
 
@@ -1143,11 +1140,9 @@
       const nav = document.querySelector('nav');
       nav.style.height = '130px';
       nav.style.padding = '0 50px';
-      const navLogo = document.querySelector('.nav-logo');
-      navLogo.style.fontSize = '2.6rem';
-      navLogo.style.gap = '22px';
-      document.querySelector('.nav-logo .logo-sfk').style.fontSize = '2.6rem';
-      document.querySelector('.nav-logo .logo-dc').style.fontSize = '1.4rem';
+      document.querySelector('.nav-logo').style.fontSize = '2.6rem';
+      document.querySelector('.logo-sfk').style.fontSize = '2.6rem';
+      document.querySelector('.logo-dc').style.fontSize = '1.4rem';
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       const hbg = document.getElementById('hamburger');
