@@ -1124,6 +1124,9 @@
   </footer>
 
   <script>
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
     window.addEventListener('load', () => {
       setTimeout(() => document.getElementById('loader').classList.add('gone'), 1400);
     });
