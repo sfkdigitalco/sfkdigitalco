@@ -736,6 +736,7 @@
       .nav-hamburger { display: flex; }
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
       .process-steps::before { display: none; }
+      .no-line::before { display: none !important; }
     }
     @media (max-width: 600px) {
       .hero-h1 { font-size: clamp(2.8rem, 14vw, 4rem); letter-spacing: .08em; }
@@ -1127,26 +1128,86 @@
     });
 
     if (window.matchMedia('(max-device-width: 900px)').matches) {
+      const screenH = window.screen.height * (1200 / window.screen.width);
+
+      // ── LOADER ──
       document.querySelector('.loader-wordmark').style.fontSize = '3.5rem';
       document.querySelector('.loader-bar').style.width = '260px';
+
+      // ── NAV: taller, bigger ──
+      const nav = document.querySelector('nav');
+      nav.style.height = '90px';
+      nav.style.padding = '0 40px';
+      document.querySelector('.logo-sfk').style.fontSize = '1.8rem';
+      document.querySelector('.logo-dc').style.fontSize = '1rem';
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
-      document.getElementById('hamburger').style.display = 'flex';
-      document.getElementById('hero').style.padding = '80px 24px 30px';
+      const hbg = document.getElementById('hamburger');
+      hbg.style.display = 'flex';
+      hbg.querySelectorAll('span').forEach(s => { s.style.width = '28px'; s.style.height = '2px'; });
 
-      // Make each section fill the phone screen height
-      const screenH = window.screen.height * (1200 / window.screen.width);
+      // ── SECTIONS: full screen height, centered ──
       document.querySelectorAll('section').forEach(s => {
         s.style.minHeight = screenH + 'px';
         s.style.display = 'flex';
         s.style.flexDirection = 'column';
         s.style.justifyContent = 'center';
+        s.style.padding = '120px 60px';
       });
 
-      // Stack what-grid to 1 column so content fills height
-      const whatGrid = document.querySelector('.what-grid');
-      if (whatGrid) whatGrid.style.gridTemplateColumns = '1fr';
+      // ── PAGE 1 HERO: bigger content ──
+      document.getElementById('hero').style.padding = '100px 80px 60px';
+      document.querySelector('.hero-h1').style.fontSize = '5rem';
+      document.querySelector('.hero-sub').style.fontSize = '1.1rem';
 
+      // ── PAGE 2 SERVICES: single column, narrow cards ──
+      const whatGrid = document.querySelector('.what-grid');
+      if (whatGrid) {
+        whatGrid.style.gridTemplateColumns = '1fr';
+        whatGrid.style.maxWidth = '700px';
+        whatGrid.style.margin = '56px auto 0';
+      }
+
+      // ── PAGE 3 PRICING: 2 builds side-by-side, extra centered below ──
+      const pricingGrid = document.querySelector('.pricing-grid');
+      if (pricingGrid) {
+        pricingGrid.style.gridTemplateColumns = '1fr 1fr';
+        pricingGrid.style.gridTemplateRows = 'auto auto';
+        const cards = pricingGrid.querySelectorAll('.pricing-card');
+        if (cards[2]) {
+          cards[2].style.gridColumn = '1 / -1';
+          cards[2].style.maxWidth = '60%';
+          cards[2].style.margin = '0 auto';
+          cards[2].style.width = '100%';
+        }
+      }
+
+      // ── PAGE 4 PROCESS: vertical stack ──
+      const processSteps = document.querySelector('.process-steps');
+      if (processSteps) {
+        processSteps.style.gridTemplateColumns = '1fr';
+        processSteps.style.maxWidth = '600px';
+        processSteps.style.margin = '56px auto 0';
+      }
+      const processBefore = document.querySelector('.process-steps');
+      if (processBefore) processBefore.classList.add('no-line');
+
+      // ── PAGE 5 WHY US: vertical stack ──
+      const whyGrid = document.querySelector('.why-grid');
+      if (whyGrid) {
+        whyGrid.style.gridTemplateColumns = '1fr';
+        whyGrid.style.maxWidth = '700px';
+        whyGrid.style.margin = '56px auto 0';
+      }
+
+      // ── FAQ: narrow width ──
+      const faqList = document.querySelector('.faq-list');
+      if (faqList) {
+        faqList.style.maxWidth = '800px';
+        faqList.style.margin = '52px auto 0';
+      }
+
+      // ── CENTER ALL TITLES ──
       document.querySelectorAll('.section-title, .section-label, .section-sub, .what-card h3, .what-card p, .card-num, .why-item h3, .why-item p, .process-step h3, .process-step p').forEach(el => {
         el.style.textAlign = 'center';
         el.style.marginLeft = 'auto';
