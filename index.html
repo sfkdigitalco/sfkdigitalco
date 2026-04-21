@@ -1128,7 +1128,6 @@
     });
 
     if (window.matchMedia('(max-device-width: 900px)').matches) {
-      const screenH = window.screen.height * (1200 / window.screen.width);
 
       // ── LOADER ──
       document.querySelector('.loader-wordmark').style.fontSize = '3.5rem';
@@ -1146,13 +1145,9 @@
       hbg.style.display = 'flex';
       hbg.querySelectorAll('span').forEach(s => { s.style.width = '28px'; s.style.height = '2px'; });
 
-      // ── SECTIONS: full screen height, centered ──
+      // ── SECTIONS: natural padding, centered content ──
       document.querySelectorAll('section').forEach(s => {
-        s.style.minHeight = screenH + 'px';
-        s.style.display = 'flex';
-        s.style.flexDirection = 'column';
-        s.style.justifyContent = 'center';
-        s.style.padding = '120px 60px';
+        s.style.padding = '100px 60px';
       });
 
       // ── PAGE 1 HERO: bigger content ──
