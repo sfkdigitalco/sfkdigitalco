@@ -1165,6 +1165,17 @@
       document.getElementById('hero').style.minHeight = 'unset';
       document.querySelector('.hero-h1').style.fontSize = '5rem';
       document.querySelector('.hero-sub').style.fontSize = '1.1rem';
+      const heroScroll = document.querySelector('.hero-scroll');
+      if (heroScroll) {
+        heroScroll.style.fontSize = '1rem';
+        heroScroll.style.letterSpacing = '.18em';
+        heroScroll.style.marginTop = '60px';
+        heroScroll.style.gap = '6px';
+      }
+      const shaft = document.querySelector('.scroll-shaft');
+      if (shaft) { shaft.style.width = '2px'; shaft.style.height = '70px'; }
+      const tip = document.querySelector('.scroll-tip');
+      if (tip) { tip.style.width = '14px'; tip.style.height = '14px'; tip.style.borderRightWidth = '2.5px'; tip.style.borderBottomWidth = '2.5px'; }
 
       // ── PAGE 2 SERVICES: single column, narrow cards ──
       const whatGrid = document.querySelector('.what-grid');
@@ -1221,8 +1232,8 @@
       // ── CTA: zoom in more ──
       const cta = document.getElementById('cta');
       if (cta) {
-        cta.style.padding = '20px 40px';
-        cta.style.fontSize = '1.15rem';
+        cta.style.padding = '10px 40px';
+        cta.style.fontSize = '1.2rem';
         const ctaBox = cta.querySelector('.cta-box');
         if (ctaBox) { ctaBox.style.padding = '100px 70px'; ctaBox.style.borderRadius = '28px'; }
         const ctaP = cta.querySelector('p');
