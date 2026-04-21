@@ -1132,8 +1132,21 @@
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       document.getElementById('hamburger').style.display = 'flex';
-      document.getElementById('hero').style.minHeight = '50vh';
       document.getElementById('hero').style.padding = '80px 24px 30px';
+
+      // Make each section fill the phone screen height
+      const screenH = window.screen.height * (1200 / window.screen.width);
+      document.querySelectorAll('section').forEach(s => {
+        s.style.minHeight = screenH + 'px';
+        s.style.display = 'flex';
+        s.style.flexDirection = 'column';
+        s.style.justifyContent = 'center';
+      });
+
+      // Stack what-grid to 1 column so content fills height
+      const whatGrid = document.querySelector('.what-grid');
+      if (whatGrid) whatGrid.style.gridTemplateColumns = '1fr';
+
       document.querySelectorAll('.section-title, .section-label, .section-sub, .what-card h3, .what-card p, .card-num, .why-item h3, .why-item p, .process-step h3, .process-step p').forEach(el => {
         el.style.textAlign = 'center';
         el.style.marginLeft = 'auto';
