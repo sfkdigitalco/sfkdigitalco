@@ -1173,12 +1173,13 @@
       // Page 7 CTA: tight padding, fix title layout
       const ctaSec = document.getElementById('cta');
       if (ctaSec) {
-        ctaSec.style.padding = '40px 50px';
+        ctaSec.style.padding = '20px 30px';
         const ctaTitle = ctaSec.querySelector('.section-title');
         if (ctaTitle) {
-          ctaTitle.style.fontSize = '2.4rem';
+          ctaTitle.style.fontSize = '1.9rem';
           ctaTitle.style.whiteSpace = 'normal';
           ctaTitle.style.wordBreak = 'keep-all';
+          ctaTitle.style.lineHeight = '1.3';
         }
       }
 
@@ -1276,7 +1277,7 @@
       const cta = document.getElementById('cta');
       if (cta) {
         const ctaBox = cta.querySelector('.cta-box');
-        if (ctaBox) { ctaBox.style.padding = '60px 50px'; ctaBox.style.borderRadius = '24px'; }
+        if (ctaBox) { ctaBox.style.padding = '70px 60px'; ctaBox.style.borderRadius = '24px'; }
         const ctaP = cta.querySelector('p');
         if (ctaP) { ctaP.style.fontSize = '1.1rem'; ctaP.style.lineHeight = '1.9'; }
         const ctaBtns = cta.querySelector('.cta-buttons');
