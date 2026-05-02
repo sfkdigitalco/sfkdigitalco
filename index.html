@@ -1144,12 +1144,16 @@
 
       // ── NAV: much bigger ──
       const nav = document.querySelector('nav');
-      nav.style.height = '130px';
+      nav.style.height = '90px';
       nav.style.padding = '0 50px';
-      document.querySelector('.nav-logo').style.fontSize = '2.1rem';
-      document.querySelector('.nav-logo').style.marginTop = '18px';
-      document.querySelector('.nav-logo .logo-sfk').style.fontSize = '2.1rem';
-      document.querySelector('.nav-logo .logo-dc').style.fontSize = '1.7rem';
+      nav.style.display = 'flex';
+      nav.style.alignItems = 'center';
+      document.querySelector('.nav-logo').style.fontSize = '1.47rem';
+      document.querySelector('.nav-logo').style.marginTop = '0';
+      document.querySelector('.nav-logo').style.display = 'flex';
+      document.querySelector('.nav-logo').style.alignItems = 'center';
+      document.querySelector('.nav-logo .logo-sfk').style.fontSize = '1.47rem';
+      document.querySelector('.nav-logo .logo-dc').style.fontSize = '1.19rem';
       document.querySelector('.nav-links').style.display = 'none';
       document.querySelector('.nav-cta').style.display = 'none';
       const hbg = document.getElementById('hamburger');
